@@ -1,0 +1,3 @@
+#!/bin/bash
+
+git push https://kb-pub:$GIT_TOKEN@github.com/kb-pub/sppp-2.git
