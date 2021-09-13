@@ -1,0 +1,22 @@
+ctxexample/bot/IOService.java
+ ctxexample.bot.IOService
+ctxexample/bot/I18nService.java
+ ctxexample.bot.I18nService
+ctxexample/bot/LanguageService.java
+ ctxexample.bot.LanguageService
+ctxexample/service/LanguageServiceImpl.java
+ ctxexample.service.LanguageServiceImpl
+ctxexample/service/IOServiceImpl.java
+ ctxexample.service.IOServiceImpl
+ctxexample/AppConstructor.java
+ ctxexample.AppConstructor
+ctxexample/service/I18nServiceImpl.java
+ ctxexample.service.I18nServiceImpl
+ctxexample/config/AppConfig.java
+ ctxexample.config.AppConfig
+ctxexample/App.java
+ ctxexample.App
+ctxexample/bot/MotivatingBot.java
+ ctxexample.bot.MotivatingBot
+ctxexample/config/IOConfig.java
+ ctxexample.config.IOConfig
