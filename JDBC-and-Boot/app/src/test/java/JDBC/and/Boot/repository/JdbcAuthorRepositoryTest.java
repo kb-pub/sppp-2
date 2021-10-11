@@ -1,0 +1,36 @@
+package JDBC.and.Boot.repository;
+
+import JDBC.and.Boot.TestData;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.context.annotation.Import;
+
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
+
+@JdbcTest
+@Import(JdbcAuthorRepository.class)
+class JdbcAuthorRepositoryTest {
+
+    @Autowired
+    AuthorRepository authorRepository;
+
+    TestData data;
+
+    @BeforeEach
+    void setUp() {
+        data = new TestData();
+    }
+
+    @Test
+    void findAllWithoutBooksByNamePart() {
+        Assertions.assertThat(authorRepository.findAllWithoutBooksByNamePart("THOR"))
+                .containsExactlyInAnyOrderElementsOf(data.authorsWB.stream()
+                        .filter(author -> author.getName().toLowerCase().contains("thor"))
+                        .collect(toList()));
+    }
+}
