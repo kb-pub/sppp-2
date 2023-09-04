@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.Map;
 
-@Repository
+//@Repository
 @RequiredArgsConstructor
 public class JdbcAuthorRepository implements AuthorRepository {
     private final NamedParameterJdbcOperations jdbc;

@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'application'
 }
 
@@ -24,4 +23,9 @@ application {
 
 test {
     useJUnitPlatform()
+}
+
+run {
+    standardInput = System.in
+    standardOutput = System.out
 }

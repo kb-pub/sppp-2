@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ResourceBundleManager">
+    <file url="file:///media/storage/YDisk/Универ/Предметы/СППП 2/git/sppp-2/SpringUtils/src/main/resources/bungle_en.properties" />
+    <file url="file:///media/storage/YDisk/Универ/Предметы/СППП 2/git/sppp-2/SpringUtils/src/main/resources/bungle_ru.properties" />
+    <custom-resource-bundle>
+      <file value="file:///media/storage/YDisk/Универ/Предметы/СППП 2/git/sppp-2/SpringUtils/src/main/resources/bungle_en.properties" />
+      <file value="file:///media/storage/YDisk/Универ/Предметы/СППП 2/git/sppp-2/SpringUtils/src/main/resources/bungle_ru.properties" />
+      <base-name>bungle</base-name>
+    </custom-resource-bundle>
+  </component>
+</project>

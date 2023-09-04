@@ -14,10 +14,10 @@ public class Settings {
     @Value("${app.server.url:http://default.org}")
     private String serverUrl;
 
-    @Value("${app.server.ip}")
+    @Value("${app.server.ip:127.0.0.1}")
     private String serverIp;
 
-    @Value("${app.server.port}")
+    @Value("${app.server.port:1234}")
     private int serverPort;
 
     @Value("${app.user.name}")

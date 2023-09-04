@@ -9,7 +9,14 @@
         </processorPath>
         <module name="SpringUtils.main" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.sdkman/candidates/gradle/7.2/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+        </processorPath>
+        <module name="org.example.SpringUtils.main" />
+      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="16" />
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>

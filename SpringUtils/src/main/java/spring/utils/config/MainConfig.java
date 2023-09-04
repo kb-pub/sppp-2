@@ -31,6 +31,5 @@ public class MainConfig {
                 .command("/bin/bash", "-c", "echo \"Hello from SpEL!\" > ~/test/SpEL_Hello.txt")
                 .inheritIO()
                 .start();
-
     }
 }

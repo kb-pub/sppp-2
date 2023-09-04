@@ -4,12 +4,15 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/7.1.1" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="17" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
+            <option value="/media/storage/YDisk/Универ/Предметы/СППП 2/git/sppp-2/SpringUtils" />
           </set>
         </option>
       </GradleProjectSettings>

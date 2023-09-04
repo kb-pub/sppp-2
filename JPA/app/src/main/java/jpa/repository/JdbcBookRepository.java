@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+//@Repository
 @RequiredArgsConstructor
 public class JdbcBookRepository implements BookRepository {
     private final static RowMapper<Book> MAPPER = (rs, num) ->

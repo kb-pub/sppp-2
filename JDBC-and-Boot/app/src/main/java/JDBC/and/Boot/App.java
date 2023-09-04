@@ -3,13 +3,35 @@
  */
 package JDBC.and.Boot;
 
+import JDBC.and.Boot.config.Settings;
+import lombok.RequiredArgsConstructor;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
+@EnableConfigurationProperties
 public class App {
     public static void main(String[] args) {
         SpringApplication.run(App.class);
+    }
+
+    @Component
+    @RequiredArgsConstructor
+    @Order(Ordered.HIGHEST_PRECEDENCE)
+    public static class MyRunner implements ApplicationRunner {
+        private final Settings settings;
+
+        @Override
+        public void run(ApplicationArguments args) throws Exception {
+            System.out.println("##########################");
+            System.out.println(settings.some.greeting);
+        }
     }
 }
 

@@ -1,0 +1,49 @@
+<!-- helloPage.html: -->
+<span th:text="${username}">
+Hello, Username!
+</span>
+
+<div th:object="${user}">
+    <span th:text="*{name}">
+        John Doe
+    </span>
+</div>
+
+<!-- page.html: -->
+<a href="account.html" th:href="@{/account(id=${id})}">
+    Account Page
+</a>
+
+<!-- page in app: -->
+<a href="/account?id=1">
+    Account Page
+</a>
+
+<form th:action="@{/main}">
+    <input th:value="${name}"/>
+</form>
+
+<li th:each="account : ${accounts}">
+    <span th:text="${account.owner}">
+        John Doe
+    </span>
+</li>
+
+<div th:if="${@myBean.hasErrors()}">
+    <span>ERROR!</span>
+</div>
+
+<!-- page.html: -->
+<span th:text="#{localized.hello}">
+    Hello!
+</span>
+
+<!-- page.html: -->
+<span th:text="#{localized.hello('Mike')}">
+    Hello, Username!
+</span>
+
+<!-- page.html: -->
+<span th:utext="#{localized.hello(${user.name})}">
+    Hello, John Doe!
+</span>

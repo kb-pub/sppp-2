@@ -9,26 +9,27 @@ import ctxexample.service.IOServiceImpl;
 import ctxexample.service.LanguageServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 //@Configuration
 public class AppConfig {
     @Bean
-    LanguageService languageService() {
+    public LanguageService languageService() {
         return new LanguageServiceImpl();
     }
 
     @Bean
-    IOService ioService() {
+    public IOService ioService() {
         return new IOServiceImpl(System.in, System.out);
     }
 
     @Bean
-    I18nService i18nService() {
+    public I18nService i18nService() {
         return new I18nServiceImpl(languageService());
     }
 
     @Bean(name = "bot")
-    MotivatingBot motivatingBot(I18nService i18n, IOService io) {
-        return new MotivatingBot(i18n, io, languageService());
+    public MotivatingBot motivatingBot(I18nService i18n, IOService io, LanguageService languageService) {
+        return new MotivatingBot(i18n, io, languageService);
     }
 }

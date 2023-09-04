@@ -2,6 +2,7 @@ package ctxexample.service;
 
 import ctxexample.bot.I18nService;
 import ctxexample.bot.LanguageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -12,9 +13,11 @@ public class I18nServiceImpl implements I18nService {
             "ru#hello", "Привет! Меня зовут Бот456546",
             "ru#what-is-your-name", "Как тебя зовут?",
             "ru#go-work", "Давай, иди работай, %username%",
+            "ru#press-any-key", "[Нажмите любую клавишу для завершения...]",
             "en#hello", "Хелло! Май нэйм из Бот456546",
             "en#what-is-your-name", "Вхат из ёр нэйм?",
-            "en#go-work", "Камон, гоу ворк, %username%"
+            "en#go-work", "Камон, гоу ворк, %username%",
+            "en#press-any-key", "[Пресс эни кей то кантинью...]"
     );
 
     private final LanguageService languageService;

@@ -23,6 +23,7 @@ public class MotivatingBot {
         sayHello();
         String username = askName();
         motivate(username);
+        pressAnyKey();
     }
 
     private void selectLanguage() {
@@ -45,5 +46,10 @@ public class MotivatingBot {
         ioService.println(i18nService.getMessage(
                 "go-work", Map.of("username", username)
         ));
+    }
+
+    private void pressAnyKey() {
+        ioService.print(i18nService.getMessage("press-any-key"));
+        ioService.readLine();
     }
 }

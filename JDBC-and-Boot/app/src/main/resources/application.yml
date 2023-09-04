@@ -4,3 +4,7 @@ spring:
     username: postgres
     password: secret
     initialization-mode: always
+app:
+  some:
+    greeting: hello!
+    number: 123

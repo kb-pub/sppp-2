@@ -13,6 +13,7 @@ import spring.utils.services.LocaleService;
 
 import java.time.LocalDate;
 import java.util.Locale;
+import java.util.Properties;
 
 @Slf4j
 @ComponentScan
@@ -27,22 +28,24 @@ public class App {
          * Testing
          */
 
-        //lombokTest()
-        //test2();
+
+
+//        lombokTest();
+//        test2();
         test3();
 
     }
 
-    private static void test3() {
-        val ctx = new AnnotationConfigApplicationContext(App.class);
+    private static void lombokTest() {
+        var user = new UserDto(1, "Vasya", LocalDate.now());
+        log.info(user + "");
 
-        var locale = ctx.getBean(LocaleService.class);
-        locale.setCurrent(Locale.forLanguageTag("en"));
+        var person = new PersonData();
+        person.setId(1);
+        person.setFio("Petya");
+        person.setBirthday(LocalDate.now());
 
-        log.info("locale: " + locale.getCurrent());
-
-        ctx.getBean(ConversationService.class)
-                .doConversation();
+        log.info(person + "");
     }
 
     private static void test2() {
@@ -60,15 +63,21 @@ public class App {
         log.info("danger: " + config.getDangerousFiled());
     }
 
-    private static void lombokTest() {
-        var user = new UserDto(1, "Vasya", LocalDate.now());
-        log.info(user + "");
+    private static void test3() {
+        val ctx = new AnnotationConfigApplicationContext(App.class);
 
-        var person = new PersonData();
-        person.setId(1);
-        person.setFio("Petya");
-        person.setBirthday(LocalDate.now());
+        var locale = ctx.getBean(LocaleService.class);
 
-        log.info(person + "");
+        locale.setCurrent(Locale.forLanguageTag("en"));
+        log.info("locale: " + locale.getCurrent());
+        ctx.getBean(ConversationService.class)
+                .doConversation();
+
+        locale.setCurrent(Locale.forLanguageTag("ru"));
+        log.info("locale: " + locale.getCurrent());
+        ctx.getBean(ConversationService.class)
+                .doConversation();
     }
+
+
 }

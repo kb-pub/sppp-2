@@ -17,7 +17,6 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-
     testImplementation 'com.h2database:h2:1.4.200'
 }
 

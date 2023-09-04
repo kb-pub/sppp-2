@@ -27,10 +27,5 @@
         <constructor-arg index="2" ref="lang" />
     </bean>
 
-    <!--bean id="country" class="org.arpit.java2blog.model.Country">
-        <constructor-arg index="0" value="India"></constructor-arg>
-        <constructor-arg index="1" value="20000"></constructor-arg>
-    </bean-->
-
     <!-- context:annotation-config /-->
 </beans>
