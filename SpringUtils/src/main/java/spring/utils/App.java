@@ -28,8 +28,6 @@ public class App {
          * Testing
          */
 
-
-
 //        lombokTest();
 //        test2();
         test3();
@@ -60,7 +58,7 @@ public class App {
 
 //        config.doSomeStuff();
 
-        log.info("danger: " + config.getDangerousFiled());
+//        log.info("danger: " + config.getDangerousFiled());
     }
 
     private static void test3() {
@@ -68,7 +66,7 @@ public class App {
 
         var locale = ctx.getBean(LocaleService.class);
 
-        locale.setCurrent(Locale.forLanguageTag("en"));
+        locale.setCurrent(Locale.forLanguageTag("en-US"));
         log.info("locale: " + locale.getCurrent());
         ctx.getBean(ConversationService.class)
                 .doConversation();
