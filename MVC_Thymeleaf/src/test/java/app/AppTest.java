@@ -26,7 +26,7 @@ public class ControllerTests {
     public void test() throws Exception {
         given(vehicleService.getDetails("id"))
                 .willReturn(new Vehicle("Honda"));
-        this.mvc..perform(get("/id/vehicle"))
+        this.mvc.perform(get("/id/vehicle"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Honda"));
     }

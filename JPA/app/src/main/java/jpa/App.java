@@ -14,16 +14,20 @@ import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.TransactionManager;
 import java.awt.print.Pageable;
 import java.sql.*;
 import java.util.Optional;
 
 @SpringBootApplication
 public class App {
+    @Transactional
     public static void main(String[] args) {
         SpringApplication.run(App.class);
+        TransactionManager tm;
     }
 }

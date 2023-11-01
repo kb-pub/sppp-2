@@ -3,6 +3,7 @@ package JDBC.and.Boot.repository;
 import JDBC.and.Boot.domain.Author;
 import JDBC.and.Boot.domain.Book;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -116,17 +117,30 @@ public class JdbcBookRepository implements BookRepository {
     @Override
     public void insert(Book book) {
         var keyHolder = new GeneratedKeyHolder();
-        var params = new MapSqlParameterSource();
-        params.addValue("title", book.getTitle());
-        params.addValue("publish_year", book.getYear());
         jdbc.update("""
                         insert into books (title, publish_year)
                         values (:title, :publish_year)
                         """,
-                params,
+                SqlParams.of("title", book.getTitle(),
+                        "publish_year", book.getYear()),
                 keyHolder);
         book.setId((Long)(keyHolder.getKeys().get("id")));
         insertAuthors(book);
+    }
+
+    public static class SqlParams {
+        public static MapSqlParameterSource of(String k1, Object v1) {
+            var params = new MapSqlParameterSource();
+            params.addValue(k1, v1);
+            return params;
+        }
+
+        public static MapSqlParameterSource of(String k1, Object v1, String k2, Object v2) {
+            var params = new MapSqlParameterSource();
+            params.addValue(k1, v1);
+            params.addValue(k2, v2);
+            return params;
+        }
     }
 
     @Override
