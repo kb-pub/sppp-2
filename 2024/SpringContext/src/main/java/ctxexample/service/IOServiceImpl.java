@@ -1,6 +1,7 @@
 package ctxexample.service;
 
 import ctxexample.bot.IOService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
@@ -13,6 +14,7 @@ public class IOServiceImpl implements IOService {
     private final Scanner scanner;
     private final PrintWriter writer;
 
+//    @Autowired
     public IOServiceImpl(InputStream inputStream, OutputStream outputStream) {
         this.scanner = new Scanner(inputStream);
         this.writer = new PrintWriter(outputStream);

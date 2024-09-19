@@ -27,6 +27,11 @@ public class AppConfig {
     public I18nService i18nService() {
         return new I18nServiceImpl(languageService());
     }
+//
+//    @Bean(name = "bot")
+//    public MotivatingBot motivatingBot() {
+//        return new MotivatingBot(i18nService(), ioService(), languageService());
+//    }
 
     @Bean(name = "bot")
     public MotivatingBot motivatingBot(I18nService i18n, IOService io, LanguageService languageService) {

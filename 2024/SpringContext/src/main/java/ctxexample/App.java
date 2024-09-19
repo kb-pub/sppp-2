@@ -24,5 +24,6 @@ public class App {
         new AnnotationConfigApplicationContext(App.class)
                 .getBean("bot", MotivatingBot.class)
                 .conversation();
+
     }
 }
