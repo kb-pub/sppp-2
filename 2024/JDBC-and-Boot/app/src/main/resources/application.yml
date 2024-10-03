@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://172.17.0.2/testdb
+    username: postgres
+    password: secret
+    initialization-mode: always
+app:
+  some:
+    greeting: hello!
+    number: 123

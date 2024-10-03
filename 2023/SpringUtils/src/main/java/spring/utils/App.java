@@ -29,8 +29,8 @@ public class App {
          */
 
 //        lombokTest();
-        test2();
-//        test3();
+//        test2();
+        test3();
 
     }
 
